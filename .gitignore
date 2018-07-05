@@ -3,3 +3,5 @@
 *.log
 doxygen*.db
 
+.pytest_cache/
+__pycache__/
