@@ -16,3 +16,23 @@ except IOError:
     WORLD = []
 
 ## @}
+
+## @defgroup sym Symbolic class system
+## @{
+
+## base class
+class Frame: pass
+
+## primititive elements
+class Atom(Frame): pass
+
+## symbol
+class Symbol(Atom): pass
+
+## number
+class Number(Atom): pass
+
+## string
+class String(Atom): pass
+
+## @}
