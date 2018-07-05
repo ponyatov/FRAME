@@ -8,15 +8,38 @@
 var body =0;
 var svg  =0;
 
+var stack=0;
+var words=0;
+
+var log  =0;
+var pad  =0;
+
+var swipe=0;
+
 window.onload = function() {
-	body = d3.select("body").select(".swiper")
-	svg  = body.append("svg") 
+	
+	swipe = document.getElementById("swipe");
+	stack = document.getElementById("stack");
+	words = document.getElementById("stack");
+	log   = document.getElementById("stack");
+	pad   = document.getElementById("stack");
+	pad   = document.getElementById("stack");
+
+	body = d3.select("body");
+	svg  = d3.select("svg") 
 	//body.style("background", "white")
 	svg.append("rect")
 		.attr("width",32)
 		.attr("height",64)
 		.style("fill", "red")
+
+	swipe.style.height = pad.offsetTop + pad.offsetHeight +"px";
 }
+
+
+window.onoffline = function() { swipe.style.background = red; }
+window.ononline  = function() {}
+
 </script>
 
 <style>
@@ -27,30 +50,32 @@ window.onload = function() {
 
 body {
 	background: black; color: white;
+	overflow: hidden;
 }
 
-.swiper {
+#swipe {
 	border: .5vmin double yellow; 
 	overflow-x: scroll; white-space: nowrap;
-	overflow-y: scroll; 
+	overflow-y: hidden; 
 }
 
-.swiper * {
+#swipe * {
 	display: inline-block;
 	border: .5vmin double white;
 	width: 90%;
 }
 
 #pad {
-	position:absolute; bottom:0; width: 100%;
+	position:absolute; bottom:0; 
+	width: 99%;
 	background: darkblue; color: white;
-	overflow: auto;
+	overflow: hidden; resize:none
 }
 </style>
 
-<div class=swiper>
+<div id=swipe>
 
-<img src="logo.png">
+<svg id=svg></svg>
 
 <pre id=words>
 words
@@ -77,7 +102,9 @@ words
 <div id=log>log</div>
 </div>
 
-<textarea id=pad rows=5 wrap=off placeholder="# command/script console">
+<!-- <pre id=pad contentEditable=true> -->
+<textarea id=pad rows=5 wrap=off placeholder="# command/script console" onblur="console.log('blurr')">
+
 # comment
 
 's\t\ri\ng'
