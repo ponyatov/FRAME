@@ -56,13 +56,14 @@ body {
 #swipe {
 	border: .5vmin double yellow; 
 	overflow-x: scroll; white-space: nowrap;
-	overflow-y: hidden; 
+	overflow-y: scroll; 
+	max-height: 80%;
 }
 
 #swipe * {
 	display: inline-block;
 	border: .5vmin double white;
-	width: 90%;
+	/* width: 90%; */
 }
 
 #pad {
@@ -70,6 +71,7 @@ body {
 	width: 99%;
 	background: darkblue; color: white;
 	overflow: hidden; resize:none
+	max-height: 20%;
 }
 </style>
 
@@ -78,16 +80,6 @@ body {
 <svg id=svg></svg>
 
 <pre id=words>
-words
-words
-words
-words
-words
-words
-words
-words
-words
-words
 words
 words
 words
