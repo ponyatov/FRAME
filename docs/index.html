@@ -9,11 +9,83 @@ var body =0;
 var svg  =0;
 
 window.onload = function() {
-	body = d3.select("body")
+	body = d3.select("body").select(".swiper")
 	svg  = body.append("svg") 
 	//body.style("background", "white")
 	svg.append("rect")
 		.attr("width",32)
 		.attr("height",64)
+		.style("fill", "red")
 }
 </script>
+
+<style>
+* {
+	font-family: "Lucida Console", monospace;
+	font-size: 5vmin;
+}
+
+body {
+	background: black; color: white;
+}
+
+.swiper {
+	border: .5vmin double yellow; 
+	overflow-x: scroll; white-space: nowrap;
+	overflow-y: scroll; 
+}
+
+.swiper * {
+	display: inline-block;
+	border: .5vmin double white;
+	width: 90%;
+}
+
+#pad {
+	position:absolute; bottom:0; width: 100%;
+	background: darkblue; color: white;
+	overflow: auto;
+}
+</style>
+
+<div class=swiper>
+
+<img src="logo.png">
+
+<pre id=words>
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+words
+</pre>
+
+<div id=stack>stack</div>
+<div id=log>log</div>
+</div>
+
+<textarea id=pad rows=5 wrap=off placeholder="# command/script console">
+# comment
+
+'s\t\ri\ng'
+-01 +02.3 -0.4e+05 0xDeadBeef 0b1101    \ numbers
+
+: init ( -- ) nop ;       \ empty colon definition
+: recurse ( -- )
+  recurse init recurse ;  \ recursive definition
+
+.                         \ clean up after tests
+</textarea>
